@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Play, Terminal, Database, Workflow, Zap, Code2, FolderSync } from "lucide-react";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
+
+export const metadata: Metadata = {
+  title: "PostRoc - Composable API Data & Request Orchestration",
+  description: "Generate mock data, orchestrate API requests, and build composable data templates for testing and development.",
+  keywords: ["API", "mock data", "testing", "faker", "data generation", "request orchestration"],
+};
 
 export default function LandingPage() {
   return (
@@ -23,6 +31,7 @@ export default function LandingPage() {
             <Link href="#cli" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               CLI
             </Link>
+            <ThemeToggle />
             <Button asChild>
               <a href="https://app.postroc.scalestash.com">Open App</a>
             </Button>

@@ -2,6 +2,14 @@
 
 Marketing landing page for PostRoc - Composable API Data & Request Orchestration.
 
+## Technologies Used
+
+- Next.js 15
+- React 19
+- Tailwind CSS 4
+- shadcn/ui
+- next-themes
+
 ## Development
 
 ```bash
@@ -10,6 +18,10 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
+
+## Dark Mode
+
+This project supports dark mode via `next-themes`. The theme can be toggled using the moon/sun icon in the navigation bar. The application will also respect your system's theme preference.
 
 ## Build
 

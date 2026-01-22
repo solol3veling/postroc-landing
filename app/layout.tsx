@@ -1,11 +1,10 @@
+"use client";
+
 import type { Metadata } from "next";
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
 
-export const metadata: Metadata = {
-  title: "PostRoc - Composable API Data & Request Orchestration",
-  description: "Generate mock data, orchestrate API requests, and build composable data templates for testing and development.",
-  keywords: ["API", "mock data", "testing", "faker", "data generation", "request orchestration"],
-};
+
 
 export default function RootLayout({
   children,
@@ -13,8 +12,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
