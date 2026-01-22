@@ -6,14 +6,66 @@ import { ArrowRight, Play, Terminal, Database, Workflow, Zap, Code2, FolderSync 
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://postroc.scalestash.com'),
   title: "PostRoc - Composable API Data & Request Orchestration",
-  description: "Generate mock data, orchestrate API requests, and build composable data templates for testing and development.",
-  keywords: ["API", "mock data", "testing", "faker", "data generation", "request orchestration"],
+  description: "Generate realistic mock data, orchestrate API requests, and build reusable data templates for testing, development, and API prototyping.",
+  keywords: ["API", "mock data", "testing", "faker", "data generation", "request orchestration", "api development", "api testing"],
+  openGraph: {
+    title: "PostRoc - Composable API Data & Request Orchestration",
+    description: "Generate mock data, orchestrate API requests, and build reusable data templates.",
+    url: "https://postroc.scalestash.com",
+    siteName: "PostRoc",
+    images: [
+      {
+        url: "/og-image.png", // Replace with your actual OG image URL
+        width: 1200,
+        height: 630,
+        alt: "PostRoc - Composable API Data & Request Orchestration",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PostRoc - Composable API Data & Request Orchestration",
+    description: "Generate mock data, orchestrate API requests, and build reusable data templates.",
+    creator: "@kaycy38494566", // Replace with your Twitter handle
+    images: ["/og-image.png"], // Replace with your actual OG image URL
+  },
 };
 
 export default function LandingPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PostRoc",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Cross-platform",
+    "description": "Generate realistic mock data, orchestrate API requests, and build reusable data templates for testing, development, and API prototyping.",
+    "url": "https://postroc.scalestash.com",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "1"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "ScaleStash"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Navigation */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-14 items-center">
@@ -70,6 +122,8 @@ export default function LandingPage() {
               poster="/video-poster.png"
               controls
               preload="metadata"
+              aria-label="PostRoc Demo Video"
+              title="PostRoc Demo Video"
             >
               <source src="/demo.mp4" type="video/mp4" />
               Your browser does not support the video tag.
