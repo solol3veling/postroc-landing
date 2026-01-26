@@ -192,7 +192,10 @@ export default function LandingPage() {
             </CardHeader>
           </Card>
 
-          <Card>
+          <Card className="relative">
+            <div className="absolute top-3 right-3 px-2 py-0.5 text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 rounded-full">
+              Coming Soon
+            </div>
             <CardHeader>
               <Terminal className="h-10 w-10 mb-2 text-foreground" />
               <CardTitle>CLI Integration</CardTitle>
@@ -217,6 +220,13 @@ export default function LandingPage() {
       {/* CLI Section */}
       <section id="cli" className="container py-24 border-t">
         <div className="mx-auto max-w-2xl text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 text-sm font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 rounded-full">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-500"></span>
+            </span>
+            In Development
+          </div>
           <h2 className="text-3xl font-bold tracking-tight">Use from the command line</h2>
           <p className="mt-4 text-muted-foreground">
             Sync your workspace once, generate data anywhere
